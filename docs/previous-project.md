@@ -2,12 +2,12 @@
 
 ## 8. Previous Project
 
-TODO: Add one real software project or automation.
+AInsight was a full-stack AI intelligence aggregation project that I later extended with an automation workflow for lead intelligence and routing. The original product collected high-signal updates from AI company blogs, RSS/Atom feeds, HTML pages, release notes and selected social sources, then normalised them into a searchable feed with source attribution, keywords, model tags, bookmarks and admin-only AI summaries. The automation extension accepted inbound leads, validated required fields, checked for duplicates, enriched company information, used AI classification to estimate urgency, intent, sentiment, recommended team and confidence, then routed leads to CRM-style storage or manual review when confidence was low.
 
-- What the project did: TODO
-- My responsibilities: TODO
-- AI tools used: TODO
-- Hosting/deployment: TODO
-- What AI initially got wrong: TODO
-- How I identified and corrected it: TODO
-- Project/GitHub link: TODO
+I was personally responsible for the end-to-end implementation. On the frontend, I built the React/TypeScript and Vite dashboard, including feed views, model pages, bookmarks, authentication screens, AI summary panels and lead review screens. On the backend, I implemented the Express/TypeScript API, Prisma/PostgreSQL data model, crawler services, authentication middleware, bookmark routes, admin-protected AI endpoints, lead processing endpoints, audit logs and mock integration services. I also connected the n8n automation flow for lead intake and routing.
+
+The main AI tools used were ChatGPT/Codex during development and the OpenAI Responses API inside the application. I used ChatGPT/Codex for boilerplate, implementation review and debugging. The application used the OpenAI Responses API for structured JSON workflows such as article summaries, filtered feed summaries, model directory refreshes and lead classification.
+
+The frontend demo was deployed as a static AWS S3 site. The backend was designed to run as a Node.js API with PostgreSQL. The automation workflow ran locally with n8n, PostgreSQL and mock services for AI, Slack-style notifications and manual review.
+
+One issue the AI initially got wrong was assuming AI responses would always be valid JSON with the expected fields. In practice, responses could be wrapped in markdown fences, contain missing fields, use invalid enum values, change stable fields such as IDs or logo paths, or return confidence scores outside the expected range. I identified this through API testing, mock AI responses and inspecting parsing failures. I corrected it by tightening prompts, stripping markdown fences, validating required fields and allowed values, limiting accepted array sizes, preserving fallback values, caching results and adding fallback classifications when AI output was invalid.

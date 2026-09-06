@@ -26,9 +26,5 @@ Third-Wave-BBQ-Exercise/
 - [AI Agent Instructions](docs/ai-agent-instructions.md): initial and follow-up prompts for an AI coding agent.
 - [Review and Code Review](docs/review-and-code-review.md): how I would review AI-generated work and assess the provided unsafe endpoint.
 - [Deployment and Production](docs/deployment-and-production.md): safe VPS deployment approach and production incident response.
-- [Previous Project](docs/previous-project.md): placeholder for a real AI-assisted project example.
+- [Previous Project](docs/previous-project.md): example of an AI-assisted full-stack and automation project.
 - [AI Usage Disclosure](docs/ai-usage.md): tools, prompts and decisions made while preparing this response.
-
-## Current Status
-
-Most sections are drafted. The previous project section still needs to be completed with a real project or automation example.
